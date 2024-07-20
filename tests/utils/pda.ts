@@ -78,7 +78,8 @@ export async function getPoolAddress(
   ammConfig: PublicKey,
   tokenMint0: PublicKey,
   tokenMint1: PublicKey,
-  programId: PublicKey
+  programId: PublicKey,
+  creator: PublicKey
 ): Promise<[PublicKey, number]> {
   const [address, bump] = await PublicKey.findProgramAddress(
     [
@@ -86,6 +87,7 @@ export async function getPoolAddress(
       ammConfig.toBuffer(),
       tokenMint0.toBuffer(),
       tokenMint1.toBuffer(),
+      creator.toBuffer(),
     ],
     programId
   );

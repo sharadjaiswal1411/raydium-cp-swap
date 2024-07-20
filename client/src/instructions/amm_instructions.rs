@@ -1,5 +1,6 @@
 use anchor_client::{Client, Cluster};
 use anyhow::Result;
+use solana_sdk::signer::Signer;
 use solana_sdk::{instruction::Instruction, pubkey::Pubkey, system_program, sysvar};
 
 use raydium_cp_swap::accounts as raydium_cp_accounts;
@@ -43,6 +44,7 @@ pub fn initialize_pool_instr(
             amm_config_key.to_bytes().as_ref(),
             token_0_mint.to_bytes().as_ref(),
             token_1_mint.to_bytes().as_ref(),
+            payer.pubkey().to_bytes().as_ref(),
         ],
         &program.id(),
     );

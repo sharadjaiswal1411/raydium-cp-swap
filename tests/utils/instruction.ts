@@ -274,7 +274,8 @@ export async function initialize(
     configAddress,
     token0,
     token1,
-    program.programId
+    program.programId,
+    creator.publicKey
   );
   const [lpMintAddress] = await getPoolLpMintAddress(
     poolAddress,
@@ -362,7 +363,8 @@ export async function deposit(
     configAddress,
     token0,
     token1,
-    program.programId
+    program.programId,
+    owner.publicKey
   );
 
   const [lpMintAddress] = await getPoolLpMintAddress(
@@ -440,7 +442,8 @@ export async function withdraw(
     configAddress,
     token0,
     token1,
-    program.programId
+    program.programId,
+    owner.publicKey
   );
 
   const [lpMintAddress] = await getPoolLpMintAddress(
@@ -520,7 +523,8 @@ export async function swap_base_input(
     configAddress,
     inputToken,
     outputToken,
-    program.programId
+    program.programId,
+    owner.publicKey 
   );
 
   const [inputVault] = await getPoolVaultAddress(
@@ -590,7 +594,8 @@ export async function swap_base_output(
     configAddress,
     inputToken,
     outputToken,
-    program.programId
+    program.programId,
+    owner.publicKey
   );
 
   const [inputVault] = await getPoolVaultAddress(

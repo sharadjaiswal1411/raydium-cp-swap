@@ -24,8 +24,6 @@ pub struct AmmConfig {
     pub protocol_owner: Pubkey,
     /// Address of the fund fee owner
     pub fund_owner: Pubkey,
-    /// padding
-    pub padding: [u64; 16],
 }
 
 impl AmmConfig {

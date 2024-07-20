@@ -149,10 +149,9 @@ pub mod raydium_cp_swap {
     pub fn initialize(
         ctx: Context<Initialize>,
         init_amount_0: u64,
-        init_amount_1: u64,
-        open_time: u64,
+        init_amount_1: u64
     ) -> Result<()> {
-        instructions::initialize(ctx, init_amount_0, init_amount_1, open_time)
+        instructions::initialize(ctx, init_amount_0, init_amount_1)
     }
 
     /// Creates a pool for the given token pair and the initial price

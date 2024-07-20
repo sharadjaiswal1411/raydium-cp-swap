@@ -36,8 +36,6 @@ pub struct ObservationState {
     pub pool_id: Pubkey,
     /// observation array
     pub observations: [Observation; OBSERVATION_NUM],
-    /// padding for feature update
-    pub padding: [u64; 4],
 }
 
 impl Default for ObservationState {
@@ -48,7 +46,6 @@ impl Default for ObservationState {
             observation_index: 0,
             pool_id: Pubkey::default(),
             observations: [Observation::default(); OBSERVATION_NUM],
-            padding: [0u64; 4],
         }
     }
 }
